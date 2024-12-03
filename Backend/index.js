@@ -17,7 +17,7 @@ app.use(
     credentials: true, // Enable credentials for cookies
   })
 );
-
+app.use(express.json());
 // Routes
 app.use("/books", router);
 
