@@ -8,7 +8,7 @@ import router from './Router/router.js';
  app.use(express.json());
  app.use(express.urlencoded({extended:false}));
  app.use(cors({
-    origin: ["https://deploy-mern-api.vercel.app/"], // Allowed origin
+    origin: ["https://book-store-frontend-git-main-mahnoors-projects-9520722d.vercel.app/"], // Allowed origin
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], // Allowed HTTP methods
     credentials: true // Enable credentials for cookies
 }));
