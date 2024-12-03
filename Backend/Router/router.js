@@ -24,11 +24,15 @@ return res.status(201).send(book)
 }
 })
 // get all
-router.get("/",async(req,res)=>{
-const value=await Book.find({});
-  console.log("hello i am get");
-return res.send(value)
-})
+router.get("/", async (req, res) => {
+  try {
+    const books = await Book.find({});
+    res.status(200).send(books);
+  } catch (err) {
+    res.status(500).send({ message: "Error fetching books" });
+  }
+});
+
 // get by id
 router.get("/:id",async(req,res)=>{
   const id=req.params.id;
