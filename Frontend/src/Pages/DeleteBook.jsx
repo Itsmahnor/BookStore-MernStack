@@ -12,7 +12,7 @@ function DeleteBook() {
   const handleDeleteBook = () => {
     setLoading(true);
     axios
-      .delete(`http://localhost:5555/books/${id}`)
+      .delete(`https://book-store-api-neon.vercel.app/books/${id}`)
       .then(() => {
         setLoading(false);
         navigate("/");
