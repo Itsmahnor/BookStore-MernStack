@@ -4,25 +4,25 @@ import { Book } from '../Model/model.js';
 import mongoose from 'mongoose';
 
 // post
-router.post("/",async (req,res)=>{
+router.post("/", async (req, res) => {
   console.log(req.body); 
-try{
-  if(!req.body.title || !req.body.author || !req.body.publishYear){
-    return res.status(400).send({message:'send all required fields: title,autor,publishYear'})
+  try {
+    if (!req.body.title || !req.body.author || !req.body.publishYear) {
+      return res.status(400).send({ message: 'All fields are required: title, author, publishYear' });
+    }
+    const newBook = {
+      title: req.body.title,
+      author: req.body.author,
+      publishYear: req.body.publishYear,
+    };
+    const book = await Book.create(newBook);
+    return res.status(201).send(book);
+  } catch (err) {
+    console.error("Error in POST /books:", err.message); // Log the error
+    return res.status(500).send({ message: err.message });
   }
-  const newBook = {
-     title:req.body.title,
-     author:req.body.author,
-     publishYear:req.body.publishYear,
-  };
+});
 
-  const book=await Book.create(newBook);
-  
-return res.status(201).send(book)
-}catch(err){
-  res.status(500).send({message:err.message})
-}
-})
 // get all
 router.get("/", async (req, res) => {
   try {
