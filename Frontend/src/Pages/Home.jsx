@@ -12,7 +12,7 @@ export const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get("http://localhost:5555/books")
+    axios.get("https://book-store-api-neon.vercel.app/books")
       .then((res) => {
         console.log(res.data);
         setBooks(res.data);
