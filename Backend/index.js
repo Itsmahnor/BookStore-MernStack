@@ -7,7 +7,12 @@ import router from './Router/router.js';
  const app=express();
  app.use(express.json());
  app.use(express.urlencoded({extended:false}));
- app.use(cors());
+ app.use(cors({
+    origin: ["https://deploy-mern-api.vercel.app/"], // Allowed origin
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], // Allowed HTTP methods
+    credentials: true // Enable credentials for cookies
+}));
+
 
 app.use("/books",router)
  mongoose.connect("mongodb://localhost:27017/Books-Record").then(()=>{
