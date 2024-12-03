@@ -15,7 +15,7 @@ import router from './Router/router.js';
 
 
 app.use("/books",router)
- mongoose.connect("mongodb://localhost:27017/Books-Record").then(()=>{
+ mongoose.connect("mongodb+srv://mongo:mongo@cluster0.sg3gm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
   console.log("Server Connected");
   app.listen(PORT,()=>{
     console.log(`App is listening to port ${PORT}`);
