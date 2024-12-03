@@ -10,13 +10,14 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(
-  cors({
-    origin: "https://book-store-frontend-535wrv0v4-mahnoors-projects-9520722d.vercel.app", // Fixed origin without trailing slash
+
+
+app.use(cors({
+    origin: "https://book-store-frontend-flax.vercel.app", // Your frontend's URL
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"], // Allowed HTTP methods
-    credentials: true, // Enable credentials for cookies
-  })
-);
+    credentials: true // Allow cookies or authorization headers
+}));
+
 app.use(express.json());
 // Routes
 app.use("/books", router);
