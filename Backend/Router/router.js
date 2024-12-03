@@ -26,6 +26,7 @@ return res.status(201).send(book)
 // get all
 router.get("/",async(req,res)=>{
 const value=await Book.find({});
+  console.log("hello i am get");
 return res.send(value)
 })
 // get by id
