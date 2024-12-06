@@ -25,12 +25,7 @@ router.post("/", async (req, res) => {
 
 // get all
 router.get("/", async (req, res) => {
-  try {
-    const books = await Book.find({});
-    res.status(200).send(books);
-  } catch (err) {
-    res.status(501).send({ message: "Error fetching books" });
-  }
+res.send("Hello")
 });
 
 // get by id
