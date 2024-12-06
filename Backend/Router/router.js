@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
     const books = await Book.find({});
     res.status(200).send(books);
   } catch (err) {
-    res.status(500).send({ message: "Error fetching books" });
+    res.status(501).send({ message: "Error fetching books" });
   }
 });
 
