@@ -9,7 +9,7 @@ import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md";
 export const Home = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
-
+axios.defaults.withCredentials=true;
   useEffect(() => {
     setLoading(true);
     axios.get("https://book-store-api-neon.vercel.app/books")
