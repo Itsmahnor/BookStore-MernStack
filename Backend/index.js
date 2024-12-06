@@ -8,10 +8,12 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: ["https://book-store-frontend-flax.vercel.app"],
+    origin: ["https://book-store-frontend-flax.vercel.app", 
+             "https://book-store-frontend-chqhv8mam-mahnoors-projects-9520722d.vercel.app"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    credentials: true
+    credentials: true,
 }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
