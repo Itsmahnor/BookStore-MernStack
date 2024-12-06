@@ -8,7 +8,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: "https://book-store-frontend-flax.vercel.app/",
+    origin: ["https://book-store-frontend-flax.vercel.app"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true
 }));
@@ -21,7 +21,7 @@ app.use("/books", router);
 // MongoDB Connection
 mongoose
   .connect(
-    "mongodb+srv://mongo:mongo@cluster0.sg3gm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    "mongodb+srv://mongo:mongo@cluster0.sg3gm.mongodb.net/mongo?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => {
     console.log("Server Connected");
