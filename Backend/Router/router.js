@@ -25,6 +25,7 @@ router.post("/", async (req, res) => {
 
 // get all
 router.get("/", async (req, res) => {
+  console.log("Hello");
 res.send("Hello")
 });
 
